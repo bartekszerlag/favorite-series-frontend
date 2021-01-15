@@ -1,0 +1,28 @@
+.tv-series-list-view {
+    margin: 20px;
+}
+
+.tv-series-list {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.list-group {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.tv-series-list-view h2 {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.loading-tv-series {
+    text-align: center;
+    margin: 20px auto;
+}
+
+Button {
+    margin: 20px auto;
+    max-width: 450px;
+}
