@@ -52,9 +52,9 @@ class AddSeries extends Component {
 
     render() {
         return (
-            <div className="add-tv-series-view">
+            <div className="add-series-view">
                 <h2>Add new TV series</h2>
-                <div className="add-tv-series">
+                <div className="add-series">
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="title" size="lg">
                             <Form.Label><b>Title</b></Form.Label>
@@ -64,7 +64,7 @@ class AddSeries extends Component {
                             <Form.Label><b>Platform</b></Form.Label>
                             <Form.Control autoFocus name="platform"/>
                         </Form.Group>
-                        <Button block size="lg" type="submit">Add</Button>
+                        <Button id="add" block size="lg" type="submit">Add</Button>
                     </Form>
                 </div>
                 <SeriesAlert ref={this.addSeriesAlert}/>

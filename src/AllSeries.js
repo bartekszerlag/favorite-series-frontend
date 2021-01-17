@@ -32,22 +32,22 @@ class AllSeries extends Component {
         const {isLoaded, seriesList} = this.state;
 
         if (!isLoaded) {
-            return <div className="loading-tv-series">Loading...</div>;
+            return <div className="loading-series">Loading...</div>;
         } else {
             return (
-                <div className="tv-series-list-view">
+                <div className="series-list-view">
                     <h2>Favorite TV series</h2>
-                    <div className="tv-series-list">
+                    <div className="series-list">
                         <ListGroup>
                             {seriesList.map(series => (
-                                <ListGroup.Item key={series.id} className="tv-series">
+                                <ListGroup.Item key={series.id}>
                                     ID: <b>{series.id}</b> |
                                     Title: <b>{series.title}</b> |
                                     IMDB Rating: <b>{series.imdbRating}</b> |
                                     Platform: <b>{series.platform}</b>
                                 </ListGroup.Item>
                             ))}
-                            <Button block size="lg" onClick={this.refreshPage}>Reload Page</Button>
+                            <Button id="reload" block size="lg" onClick={this.refreshPage}>Reload Page</Button>
                         </ListGroup>
                     </div>
                 </div>

@@ -1,13 +1,13 @@
-.add-tv-series Form {
+.add-series Form {
     margin: 0 auto;
     max-width: 450px;
 }
 
-.add-tv-series-view {
+.add-series-view {
     margin: 20px;
 }
 
-.add-tv-series-view h2 {
+.add-series-view h2 {
     text-align: center;
     margin: 20px auto;
 }

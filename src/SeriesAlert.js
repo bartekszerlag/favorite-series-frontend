@@ -33,7 +33,7 @@ class SeriesAlert extends Component {
         if (this.state.visible) {
             return (
                 <>
-                    <div className="tv-series-alert">
+                    <div className="series-alert">
                         <Alert variant={this.state.variant} onClose={() => this.setState({visible: false})} dismissible>
                             <Alert.Heading>{this.state.heading}</Alert.Heading>
                             <p>

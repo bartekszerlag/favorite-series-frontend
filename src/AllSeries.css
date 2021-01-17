@@ -1,8 +1,8 @@
-.tv-series-list-view {
+.series-list-view {
     margin: 20px;
 }
 
-.tv-series-list {
+.series-list {
     text-align: center;
     margin: 20px auto;
 }
@@ -12,12 +12,12 @@
     max-width: 600px;
 }
 
-.tv-series-list-view h2 {
+.series-list-view h2 {
     text-align: center;
     margin: 20px auto;
 }
 
-.loading-tv-series {
+.loading-series {
     text-align: center;
     margin: 20px auto;
 }

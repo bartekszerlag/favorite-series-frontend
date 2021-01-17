@@ -41,15 +41,15 @@ class RemoveSeries extends Component {
 
     render() {
         return (
-            <div className="remove-tv-series-view">
+            <div className="remove-series-view">
                 <h2>Remove TV series</h2>
-                <div className="remove-tv-series">
+                <div className="remove-series">
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="id" size="lg">
                             <Form.Label><b>ID</b></Form.Label>
                             <Form.Control autoFocus name="id"/>
                         </Form.Group>
-                        <Button block size="lg" type="submit">Remove</Button>
+                        <Button id="remove" block size="lg" type="submit">Remove</Button>
                     </Form>
                 </div>
                 <SeriesAlert ref={this.removeSeriesAlert}/>
