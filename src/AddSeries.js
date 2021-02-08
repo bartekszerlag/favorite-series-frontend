@@ -10,11 +10,33 @@ class AddSeries extends Component {
     constructor(props) {
         super(props);
         this.addSeriesAlert = React.createRef()
+        this.state = {
+            title: "",
+            platform: ""
+        }
+    }
+
+    handleTitleChange = event => {
+        event.preventDefault();
+        this.setState({
+            title: event.target.value
+        })
+    }
+
+    handlePlatformChange = event => {
+        event.preventDefault();
+        this.setState({
+            platform: event.target.value,
+        })
     }
 
     handleSubmit = event => {
         event.preventDefault();
         this.addSeries(event.target.title.value, event.target.platform.value)
+    }
+
+   validateForm() {
+        return this.state.title.length > 0 && this.state.platform.length > 0;
     }
 
     showAddSeriesAlert(variant, heading, message) {
@@ -58,13 +80,13 @@ class AddSeries extends Component {
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="title" size="lg">
                             <Form.Label><b>Title</b></Form.Label>
-                            <Form.Control autoFocus name="title"/>
+                            <Form.Control autoFocus name="title" value={this.state.title} onChange={this.handleTitleChange}/>
                         </Form.Group>
                         <Form.Group controlId="platform" size="lg">
                             <Form.Label><b>Platform</b></Form.Label>
-                            <Form.Control autoFocus name="platform"/>
+                            <Form.Control autoFocus name="platform" value={this.state.platform} onChange={this.handlePlatformChange}/>
                         </Form.Group>
-                        <Button id="add" block size="lg" type="submit">Add</Button>
+                        <Button id="add" block size="lg" type="submit" disabled={!this.validateForm()}>Add</Button>
                     </Form>
                 </div>
                 <SeriesAlert ref={this.addSeriesAlert}/>
