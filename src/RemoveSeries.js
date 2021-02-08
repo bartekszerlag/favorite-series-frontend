@@ -9,6 +9,20 @@ class RemoveSeries extends Component {
     constructor(props) {
         super(props);
         this.removeSeriesAlert = React.createRef()
+        this.state = {
+            id: ""
+        }
+    }
+
+    handleIdChange = event => {
+        event.preventDefault();
+        this.setState({
+            id: event.target.value
+        })
+    }
+
+    validateId() {
+        return this.state.id.length > 0;
     }
 
     handleSubmit = event => {
@@ -47,9 +61,9 @@ class RemoveSeries extends Component {
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="id" size="lg">
                             <Form.Label><b>ID</b></Form.Label>
-                            <Form.Control autoFocus name="id"/>
+                            <Form.Control autoFocus name="id" value={this.state.id} onChange={this.handleIdChange}/>
                         </Form.Group>
-                        <Button id="remove" block size="lg" type="submit">Remove</Button>
+                        <Button id="remove" block size="lg" type="submit" disabled={!this.validateId()}>Remove</Button>
                     </Form>
                 </div>
                 <SeriesAlert ref={this.removeSeriesAlert}/>
