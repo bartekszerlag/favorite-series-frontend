@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import './AllSeries.css'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Button from "react-bootstrap/Button";
+import Spinner from 'react-bootstrap/Spinner'
 
 class AllSeries extends Component {
 
@@ -32,7 +33,13 @@ class AllSeries extends Component {
         const {isLoaded, seriesList} = this.state;
 
         if (!isLoaded) {
-            return <div className="loading-series">Loading...</div>;
+            return (
+                <div id="loading">
+                    <Spinner animation="border" variant="primary" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>
+                </div>
+            )
         } else {
             return (
                 <div className="series-list-view">
