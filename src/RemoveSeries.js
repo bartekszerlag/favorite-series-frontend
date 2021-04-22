@@ -41,7 +41,7 @@ class RemoveSeries extends Component {
         fetch('http://localhost:8080/series/' + id, {
             method: 'DELETE'
         }).then(function (response) {
-            if (response.status === 200) {
+            if (response.status === 204) {
                 this.showRemoveSeriesAlert("success", "TV series removed", "Reload page to see updated list");
             } else if (response.status === 404) {
                 this.showRemoveSeriesAlert("danger", "TV series not removed", "Not found TV series with this ID");
